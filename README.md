@@ -3,7 +3,9 @@ This project represents a complete, industry standard, end-to-end data analytics
 This project is perfect for:
 
 📊 Data Analyst aspirants who want to build a strong Portfolio Project for interviews and LinkedIn
+
 📚 Anyone learning Python, SQL, and Power BI
+
 💼 Professionals preparing for interviews in Data Analytics, Data Science or Product Analytics roles
 
 📌 Project Overview
@@ -25,12 +27,12 @@ Power BI
 GitHub
 
 🚀 Step-by-Step Project Execution Guide
-1️⃣ Clone the Repository
-
+1️⃣ **Clone the Repository
+**
 git clone https://github.com/your-username/customer-trends-data-analysis-SQL-Python-PowerBI.git -------------------------------------- Change this
 cd customer-trends-data-analysis-SQL-Python-PowerBI
 
-2️⃣ Python Environment – Google Colab
+2️⃣ **Python Environment – Google Colab**
 This project uses Google Colab for Python-based analysis.
 
 Steps:
@@ -47,7 +49,7 @@ psycopg2
 
 📌 Goal: Perform cloud-based data analysis without local setup.
 
-3️⃣ Data Import (Python – Pandas)
+3️⃣ **Data Import (Python – Pandas)**
 Load the dataset using pd.read_csv()
 Inspect rows, schema, and statistics
 
@@ -58,7 +60,7 @@ Key methods:
 
 📌 Goal: Understand dataset structure and data quality.
 
-4️⃣ Data Exploration (EDA)
+4️⃣ **Data Exploration (EDA)**
 Exploratory analysis includes:
 Customer demographics analysis
 Purchase amount distributio
@@ -72,7 +74,7 @@ Descriptive statistics
 
 📌 Goal: Identify meaningful patterns before transformation.
 
-5️⃣ Data Cleaning & Transformation
+5️⃣** Data Cleaning & Transformation**
 Cleaning steps performed in Colab:
 Handling missing values
 Converting data types
@@ -81,7 +83,7 @@ Removing duplicates
 
 📌 Goal: Prepare analysis-ready data for cloud storage.
 
-6️⃣ Cloud Database Setup – AWS Aurora PostgreSQL
+6️⃣ **Cloud Database Setup – AWS Aurora PostgreSQL**
 The cleaned dataset is stored in a managed cloud database.
 
 Steps:
@@ -91,7 +93,7 @@ Create a database (e.g. customer_behavior)
 
 📌 Goal: Use a scalable, production-grade cloud database.
 
-7️⃣ Load Cleaned Data from Colab to AWS Aurora PostgreSQL
+7️⃣ **Load Cleaned Data from Colab to AWS Aurora PostgreSQL**
 
 Using SQLAlchemy, the cleaned Pandas DataFrame is written directly from Colab to Aurora PostgreSQL.
 
@@ -104,7 +106,7 @@ df.to_sql('customer_behavior', engine, if_exists='replace', index=False)
 
 📌 Goal: Persist transformed data in a cloud database.
 
-8️⃣ Database Management with pgAdmin 4
+8️⃣ **Database Management with pgAdmin 4**
 
 Steps:
 Open pgAdmin 4
@@ -113,7 +115,7 @@ Verify table creation and schema
 
 📌 Goal: Validate data storage and manage the database.
 
-9️⃣ SQL Analysis – Business Questions
+9️⃣ **SQL Analysis – Business Questions**
 
 Open: 👉 sql/customer_behavior_sql_queries.sql
 
@@ -126,7 +128,7 @@ SQL queries are executed against AWS Aurora PostgreSQL to answer business questi
 
 📌 Goal: Translate business requirements into SQL insights.
 
-🔟 Connect AWS Aurora PostgreSQL to Power BI (Online)
+🔟 **Connect AWS Aurora PostgreSQL to Power BI (Online)**
 
 This project uses Power BI Service (Online) — no local Power BI Desktop.
 
@@ -138,7 +140,7 @@ Configure gateway if required
 
 📌 Goal: Enable cloud-to-cloud data visualization.
 
-1️⃣1️⃣ Power BI Online Dashboard Creation
+1️⃣1️⃣ **Power BI Online Dashboard Creation**
 
 Dashboard highlights:
 
@@ -150,7 +152,7 @@ Interactive filters
 
 📌 Goal: Deliver real-time, business-ready insights.
 
-1️⃣2️⃣ Project Report & Presentation
+1️⃣2️⃣ **Project Report & Presentation**
 
 Final deliverables include:
 
