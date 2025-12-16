@@ -6,93 +6,199 @@ This project is perfect for:
 📚 Anyone learning Python, SQL, and Power BI
 💼 Professionals preparing for interviews in Data Analytics, Data Science or Product Analytics roles
 
-# Customer_shopping_behavior_Analysis
-Analysis on customer shopping behavior 
-Problem Statement: A leading retail company wants to better undertsnad its customers shpping behavior in order to improve sales, customer satisfaction and long term loyalty. The management team has noticed changes in purchasing patterns across demographics product categories and sales channels (online vs offline). They are particularly interested in uncovering which factors such as discounts, reviews, seasons or payment preferences, drive consumer (behavior) decisions and repeat purchases
+📌 Project Overview
 
-Task: To analyze the companys consumer behavior dataset to answer the following business question:
-"How can the company leverage consumer shopping data to identify trends, improve customer engagement and optimize marketing and product strategies."
-What was done:
- 1. Business Porblem / Imported data into Python)
- 2. Data Modelling & EDA in Python / then, Load to PSQL database)
- 3. Connect to a database in AWS for security
- 4. Data Analysis in PSQL / then, connect with PowerBI
- 5. Interactive Dashboard using PowerBI / Summarize findings
- 6. Project Report / present findings
- 7. PowerPoint / Upload project files on Github
- 8. Create GitHub repository
+This project aims to:
+Understand customer purchasing patterns
+Perform data cleaning and transformation
+Store and query data using SQL
+Answer real-world business questions
+Build an interactive Power BI dashboard
+Present insights through a structured report
 
-DataSet:
-Using Jupyter notebook from google collab
-Open the file: Customer_Shopping_Behaviour_Analysis.ipynb
-The file contains us:
-Importing pandas
-To get the first 5 rows
-Over-all structure
-Combined statistics of all numerical column
-Categorical columns
-Replace missing values with mean or median? we should choose median over mean as mean could be affected by outliers but median is robust to outliers, getting the median by categories and filling the values in the null values in their respective category.
-Note: You should use snake casing for the column header's as it would be easier to reference while coding and we wont have to worry about the casing.
-Get the column names in snake casing (i.e. all lowercase with _)
-displaying the column to check
-create a new column
-create a column with 4 age group young-adults, Adults, Middle-aged, Senior that splits the ages into 4 equal size groups based on the data distribution and assigns the labels we defined.
-check the first 10 rows of new column created
-create a column for purchase_frequency_days. converting the textual frequencies into numbers
-convert text into numbers for analysis
-check the first 10 rows
-find out how many had discount and how many had promo_code_used. all matched ( meaning we dont need 2 columns showing the same thing we can drop one)
-drop the column promo_code
+**Tech Stack Used:**
+Python (Pandas, NumPy, SQLAlchemy)
+Jupyter Notebook
+MySQL / PostgreSQL / MS SQL Server
+SQL
+Power BI
+GitHub
 
-Connecting to AWS Aurora PostgreSQL for extra security to have a log of who uses the dataset or tampers with it
-Load dataframe into PostgreSQL
+🚀 Step-by-Step Project Execution Guide
+1️⃣ Clone the Repository
 
-
-
- 
-
-
-DataSource:
-
-
-
-
-
-How to Use This Project
-Clone the repository
-
+git clone https://github.com/your-username/customer-trends-data-analysis-SQL-Python-PowerBI.git -------------------------------------- Change this
 cd customer-trends-data-analysis-SQL-Python-PowerBI
-Open Customer_Shopping_Behavior_Analysis.ipynb notebook
 
-This file contains:
+2️⃣ Python Environment – Google Colab
+This project uses Google Colab for Python-based analysis.
 
-Data Import
+Steps:
+Open Google Colab
+Upload or open:
+Customer_Shopping_Behavior_Analysis.ipynb
+Upload the dataset (customer_shopping_behavior.csv) to Colab
 
-Data exploration
+Libraries used:
+pandas
+numpy
+sqlalchemy
+psycopg2
 
-Data cleaning
+📌 Goal: Perform cloud-based data analysis without local setup.
 
-Connection to SQL Database
+3️⃣ Data Import (Python – Pandas)
+Load the dataset using pd.read_csv()
+Inspect rows, schema, and statistics
 
-Load the data from Python notebook into MySQL/PostgreSQL/MS SQL Server
+Key methods:
+.head()
+.info()
+.describe()
 
-Create a database in SQL
+📌 Goal: Understand dataset structure and data quality.
 
-Run Python code to load data into SQL database
+4️⃣ Data Exploration (EDA)
+Exploratory analysis includes:
+Customer demographics analysis
+Purchase amount distributio
+Category-level trends
+Discount vs non-discount spending
 
-Open customer_behavior_sql_queries.sql
+Techniques used:
+GroupBy aggregations
+Value counts
+Descriptive statistics
 
-Answer Business Questions using SQL Queries
+📌 Goal: Identify meaningful patterns before transformation.
 
-Connect the SQL Database to Power BI
+5️⃣ Data Cleaning & Transformation
+Cleaning steps performed in Colab:
+Handling missing values
+Converting data types
+Standardizing categorical values
+Removing duplicates
 
-Open customer_behavior_dashboard.pbix
+📌 Goal: Prepare analysis-ready data for cloud storage.
 
-Create interactive dashboard in Power BI
+6️⃣ Cloud Database Setup – AWS Aurora PostgreSQL
+The cleaned dataset is stored in a managed cloud database.
 
-Create Project Report and Presentation
+Steps:
+Create an AWS Aurora PostgreSQL cluster
+Configure security groups (allow PostgreSQL port 5432)
+Create a database (e.g. customer_behavior)
+
+📌 Goal: Use a scalable, production-grade cloud database.
+
+7️⃣ Load Cleaned Data from Colab to AWS Aurora PostgreSQL
+
+Using SQLAlchemy, the cleaned Pandas DataFrame is written directly from Colab to Aurora PostgreSQL.
+
+Steps:
+Create PostgreSQL connection string
+Create SQLAlchemy engine
+Load data using .to_sql()
+
+df.to_sql('customer_behavior', engine, if_exists='replace', index=False)
+
+📌 Goal: Persist transformed data in a cloud database.
+
+8️⃣ Database Management with pgAdmin 4
+
+Steps:
+Open pgAdmin 4
+Register a new server using Aurora endpoint
+Verify table creation and schema
+
+📌 Goal: Validate data storage and manage the database.
+
+9️⃣ SQL Analysis – Business Questions
+
+Open: 👉 sql/customer_behavior_sql_queries.sql
+
+SQL queries are executed against AWS Aurora PostgreSQL to answer business questions such as:
+1. Top-spending customers
+2. Average purchase amount by gender
+3. Effect of discounts on spending
+4. Most popular product categories
+5. Customer repeat behavior
+
+📌 Goal: Translate business requirements into SQL insights.
+
+🔟 Connect AWS Aurora PostgreSQL to Power BI (Online)
+
+This project uses Power BI Service (Online) — no local Power BI Desktop.
+
+Steps:
+Open Power BI Service
+Use Get Data → PostgreSQL Database
+Enter Aurora endpoint and credentials
+Configure gateway if required
+
+📌 Goal: Enable cloud-to-cloud data visualization.
+
+1️⃣1️⃣ Power BI Online Dashboard Creation
+
+Dashboard highlights:
+
+Total revenue & average order value
+Customer segmentation
+Category-wise sales
+Discount impact analysis
+Interactive filters
+
+📌 Goal: Deliver real-time, business-ready insights.
+
+1️⃣2️⃣ Project Report & Presentation
+
+Final deliverables include:
+
+Executive summary
+Data methodology
+SQL insights
+Dashboard screenshots
+Business recommendations
+
+📌 Goal: Communicate insights clearly to stakeholders.
+
+📊 Key Insights Generated
+
+Discounted purchases show higher average spend
+A small customer segment drives a large portion of revenue
+Product category preferences vary by demographic
+Repeat customers significantly impact total sales
+
+🧠 Skills Demonstrated
+
+Cloud-based data analysis (Google Colab)
+Data cleaning & EDA (Python, Pandas)
+Cloud database management (AWS Aurora PostgreSQL)
+SQL analytics
+pgAdmin database administration
+Power BI Online dashboarding
+End-to-end data pipeline design
+
+🔗 Useful Links
+
+Pandas: https://pandas.pydata.org/docs/
+
+AWS Aurora PostgreSQL: https://docs.aws.amazon.com/aurora/
+
+pgAdmin: https://www.pgadmin.org/docs/
+
+Power BI Service: https://learn.microsoft.com/power-bi/
 
 
+🤝 Connect & Feedback
+If you found this project useful:
 
-📜 License
-MIT — feel free to fork, star, and use in your portfolio.
+⭐ Star the repository
+
+🍴 Fork it
+
+💬 Share feedback or suggestions
+
+Happy Analyzing! 📈
+
+
