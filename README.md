@@ -1,6 +1,6 @@
 # Customer Shopping Behavior Analysis
 
-This project demonstrates a **complete, industry-standard end-to-end data analytics workflow**, closely reflecting the real responsibilities of a professional **Data Analyst**. It covers the full data lifecycle — from **data processing and cloud storage** to **SQL-driven analysis** and **business-ready visualization**.
+This project demonstrates a **complete, industry-standard end-to-end data analytics workflow**, closely reflecting the real responsibilities of a professional **Data Analyst**. It covers the full data lifecycle from **data processing and cloud storage** to **SQL-driven analysis** and **business-ready visualization**.
 
 ---
 
