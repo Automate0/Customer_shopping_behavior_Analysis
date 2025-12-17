@@ -1,266 +1,272 @@
-Customer Shopping Behavior Analysis
+# Customer Shopping Behavior Analysis
 
-This project demonstrates a complete, industry-standard end-to-end data analytics workflow, closely reflecting the real responsibilities of a professional Data Analyst.
-It covers the full data lifecycle — from data processing and cloud storage to SQL-driven analysis and business-ready visualization.
+This project demonstrates a **complete, industry-standard end-to-end data analytics workflow**, closely reflecting the real responsibilities of a professional **Data Analyst**. It covers the full data lifecycle — from **data processing and cloud storage** to **SQL-driven analysis** and **business-ready visualization**.
 
-🎯 Who This Project Is For
+---
 
-📊 Aspiring Data Analysts building strong portfolio projects for interviews & LinkedIn
+## 🎯 Who This Project Is For
 
-📚 Learners practicing Python, SQL, Power BI, and Cloud Databases
+* 📊 **Aspiring Data Analysts** building strong portfolio projects for interviews & LinkedIn
+* 📚 **Learners** practicing Python, SQL, Power BI, and Cloud Databases
+* 💼 **Professionals** preparing for Data Analytics, Data Science, or Product Analytics roles
 
-💼 Professionals preparing for Data Analytics, Data Science, or Product Analytics roles
+---
 
-🧩 Project Objective
+## 🧩 Project Objective
 
 The goal of this project is to:
 
-Understand customer purchasing behavior
+* Understand customer purchasing behavior
+* Clean and transform raw data
+* Store curated data in a cloud database
+* Answer real-world business questions using SQL
+* Deliver insights through interactive dashboards
+* Communicate findings in a clear, stakeholder-friendly format
 
-Clean and transform raw data
+---
 
-Store curated data in a cloud database
+## 🛠️ Tech Stack
 
-Answer real-world business questions using SQL
+* **Python** (Pandas, NumPy, SQLAlchemy)
+* **Google Colab**
+* **AWS Aurora PostgreSQL**
+* **SQL & pgAdmin 4**
+* **Power BI Desktop**
+* **GitHub**
 
-Deliver insights through interactive dashboards
+---
 
-Communicate findings in a clear, stakeholder-friendly format
+## 🚀 Project Architecture – 4 Core Phases
 
-🛠️ Tech Stack
+This project is structured into **four clear phases**, mirroring a real-world analytics pipeline.
 
-Python (Pandas, NumPy, SQLAlchemy)
+---
 
-Google Colab
+## 1️⃣ Data Processing (Google Colab – Python)
 
-AWS Aurora PostgreSQL
+### Purpose
 
-SQL & pgAdmin 4
+Clean, explore, and transform raw customer data in a cloud-based environment.
 
-Power BI (Desktop)
+### Steps
 
-GitHub
+* Load the dataset using:
 
-🚀 Project Architecture (4 Core Phases)
-1️⃣ Data Processing (Google Colab – Python)
+  ```python
+  pandas.read_csv()
+  ```
 
-Purpose: Clean, explore, and transform raw data in a cloud-based environment.
+* Inspect schema and data quality using:
 
-Steps:
+  * `.head()`
+  * `.info()`
+  * `.describe()`
 
-Load dataset using pandas.read_csv()
+* Perform Exploratory Data Analysis (EDA):
 
-Inspect schema and data quality using:
+  * Customer demographics
+  * Purchase amount distributions
+  * Category-level trends
+  * Discount vs non-discount spending
 
-.head()
+* Clean and transform data:
 
-.info()
+  * Handle missing values
+  * Convert data types
+  * Standardize categorical values
+  * Remove duplicates
 
-.describe()
+### 📌 Outcome
 
-Perform Exploratory Data Analysis (EDA):
+A **clean, analysis-ready dataset** prepared for cloud storage.
 
-Customer demographics
+---
 
-Purchase amount distributions
+## 2️⃣ Data Storage (AWS Aurora PostgreSQL)
 
-Category-level trends
+### Purpose
 
-Discount vs non-discount spending
+Persist curated data in a **scalable, production-grade cloud database**.
 
-Clean and transform data:
+### Steps
 
-Handle missing values
+* Create an **AWS Aurora PostgreSQL** cluster
+* Configure **Security Groups** (allow inbound traffic on port `5432`)
+* Create a database (e.g. `customer_behavior`)
+* Load cleaned data directly from Google Colab using **SQLAlchemy**:
 
-Convert data types
-
-Standardize categorical values
-
-Remove duplicates
-
-📌 Outcome:
-A clean, analysis-ready dataset prepared for cloud storage.
-
-2️⃣ Data Storage (AWS Aurora PostgreSQL)
-
-Purpose: Persist curated data in a scalable, production-grade cloud database.
-
-Steps:
-
-Create an AWS Aurora PostgreSQL cluster
-
-Configure security groups (allow port 5432)
-
-Create a database (e.g. customer_behavior)
-
-Load cleaned data directly from Google Colab using SQLAlchemy:
-
+```python
 df.to_sql(
     'customer_behavior',
     engine,
     if_exists='replace',
     index=False
 )
+```
 
+### 📌 Outcome
 
-📌 Outcome:
-Reliable, centralized storage of curated analytical data.
+Reliable, centralized storage of curated analytical data in the cloud.
 
-3️⃣ Data Analysis (SQL & pgAdmin 4)
+---
 
-Purpose: Apply business logic and generate insights using SQL.
+## 3️⃣ Data Analysis (SQL & pgAdmin 4)
 
-Tools:
+### Purpose
 
-AWS Aurora PostgreSQL
+Apply business logic and generate insights using SQL.
 
-pgAdmin 4
+### Tools
 
-Example Business Questions Answered:
+* AWS Aurora PostgreSQL
+* pgAdmin 4
 
-Who are the top-spending customers?
+### Example Business Questions Answered
 
-What is the average purchase value by gender?
+* Who are the top-spending customers?
+* What is the average purchase value by gender?
+* Do discounts increase customer spending?
+* Which product categories perform best?
+* How much revenue comes from repeat customers?
 
-Do discounts increase customer spending?
+### 📌 Outcome
 
-Which product categories perform best?
+**Actionable business insights** derived directly from cloud-hosted data.
 
-How much revenue comes from repeat customers?
+---
 
-📌 Outcome:
-Actionable insights derived directly from cloud-hosted data.
+## 4️⃣ Data Visualization (Power BI Desktop)
 
-4️⃣ Data Visualization (Power BI Desktop)
+### Purpose
 
-Purpose: Deliver insights through interactive, business-ready dashboards.
+Deliver insights through **interactive, business-ready dashboards**.
 
-Connection Setup:
+### Connection Setup
 
-Power BI Desktop connected to AWS Aurora PostgreSQL
+* Power BI Desktop connected to AWS Aurora PostgreSQL
+* PostgreSQL **ODBC Driver (psqlODBC)** required
 
-PostgreSQL ODBC Driver required to enable connection
+### Dashboard Highlights
 
-Dashboard Highlights:
+* Total revenue & average order value
+* Customer segmentation
+* Category-wise sales performance
+* Discount impact analysis
+* Interactive filters for deeper exploration
 
-Total revenue & average order value
+### 📌 Outcome
 
-Customer segmentation
+Clear, visual **data storytelling** for decision-makers.
 
-Category-wise sales performance
+---
 
-Discount impact analysis
+## 📊 Key Insights Generated
 
-Interactive filters for exploration
+* Discounted purchases show higher average spending
+* A small customer segment drives a large share of revenue
+* Product category preferences vary by demographic
+* Repeat customers contribute significantly to total sales
 
-📌 Outcome:
-Clear, visual storytelling for decision-makers.
+---
 
-📊 Key Insights Generated
+## 🧠 Skills Demonstrated
 
-Discounted purchases show higher average spending
+* Cloud-based data processing (Google Colab)
+* Data cleaning & EDA (Python, Pandas)
+* Cloud database management (AWS Aurora PostgreSQL)
+* SQL analytics & business logic
+* pgAdmin database administration
+* Power BI dashboarding
+* End-to-end data pipeline design
 
-A small customer segment drives a large share of revenue
+---
 
-Product category preferences vary by demographic
+## ⚠️ Common Errors & Solutions
 
-Repeat customers contribute significantly to total sales
+### ❌ Invalid SSL / Certificate Error (Power BI ↔ PostgreSQL)
 
-🧠 Skills Demonstrated
-
-Cloud-based data processing (Google Colab)
-
-Data cleaning & EDA (Python, Pandas)
-
-Cloud database management (AWS Aurora PostgreSQL)
-
-SQL analytics & business logic
-
-pgAdmin database administration
-
-Power BI dashboarding
-
-End-to-end data pipeline design
-
-⚠️ Common Errors & Solutions
-❌ Invalid SSL / Certificate Error (Power BI ↔ PostgreSQL)
-
-Issue:
+**Issue:**
 Power BI fails to connect due to certificate validation.
 
-Solution:
+**Solution:**
 
-Ensure the PostgreSQL root certificate is downloaded
+* Download the PostgreSQL root certificate
+* Place it in the correct directory:
 
-Place the certificate in the correct directory:
+**Windows:**
 
-Windows:
+```text
 C:\Users\<username>\AppData\Roaming\postgresql\root.crt
+```
 
-Restart Power BI after placing the certificate
+* Restart Power BI
 
-❌ ODBC Driver Not Found
+---
 
-Issue:
-Power BI cannot detect PostgreSQL database.
+### ❌ ODBC Driver Not Found
 
-Solution:
+**Issue:**
+Power BI cannot detect the PostgreSQL database.
 
-Install the PostgreSQL ODBC (psqlODBC) Driver
+**Solution:**
 
-Ensure the driver version matches your PostgreSQL setup
+* Install the PostgreSQL ODBC (**psqlODBC**) driver
+* Ensure the driver version matches your PostgreSQL setup
+* Restart Power BI
 
-Restart Power BI after installation
+---
 
-❌ Connection Timeout
+### ❌ Connection Timeout
 
-Issue:
+**Issue:**
 Power BI or pgAdmin cannot reach AWS Aurora.
 
-Solution:
+**Solution:**
 
-Check AWS Security Group inbound rules
+* Check AWS Security Group inbound rules
+* Ensure port `5432` is open
+* Verify public accessibility or VPN configuration
 
-Ensure port 5432 is open
+---
 
-Verify public accessibility or VPN settings
+### ❌ Authentication Failed
 
-❌ Authentication Failed
+**Issue:**
+Incorrect username or password.
 
-Issue:
-Incorrect username/password.
+**Solution:**
 
-Solution:
+* Double-check credentials
+* Ensure the database user has sufficient privileges
+* Confirm the correct database name is used
 
-Double-check credentials
+---
 
-Ensure the database user has sufficient privileges
+## 🔗 Useful Links
 
-Confirm the correct database name is used
+* Pandas Documentation:
+  [https://pandas.pydata.org/docs/](https://pandas.pydata.org/docs/)
 
-🔗 Useful Links
+* AWS Aurora PostgreSQL:
+  [https://docs.aws.amazon.com/aurora/](https://docs.aws.amazon.com/aurora/)
 
-Pandas Documentation:
-https://pandas.pydata.org/docs/
+* pgAdmin 4:
+  [https://www.pgadmin.org/docs/](https://www.pgadmin.org/docs/)
 
-AWS Aurora PostgreSQL:
-https://docs.aws.amazon.com/aurora/
+* Power BI:
+  [https://learn.microsoft.com/power-bi/](https://learn.microsoft.com/power-bi/)
 
-pgAdmin 4:
-https://www.pgadmin.org/docs/
+* PostgreSQL ODBC Driver (psqlODBC):
+  [https://www.postgresql.org/ftp/odbc/versions/](https://www.postgresql.org/ftp/odbc/versions/)
 
-Power BI:
-https://learn.microsoft.com/power-bi/
+---
 
-PostgreSQL ODBC Driver (psqlODBC):
-https://www.postgresql.org/ftp/odbc/versions/
-
-🤝 Connect & Feedback
+## 🤝 Connect & Feedback
 
 If you found this project useful:
 
-⭐ Star the repository
-🍴 Fork it
-💬 Share feedback or suggestions
+* ⭐ Star the repository
+* 🍴 Fork it
+* 💬 Share feedback or suggestions
 
 Happy Analyzing! 📈
